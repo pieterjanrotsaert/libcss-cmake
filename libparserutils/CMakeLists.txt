@@ -6,9 +6,9 @@ file(GLOB_RECURSE PARSERUTILS_SRC src/*.c)
 
 add_library(parserutils STATIC ${PARSERUTILS_SRC})
 
-target_compile_definitions(parserutils PUBLIC WITHOUT_ICONV_FILTER)
+target_compile_definitions(parserutils PRIVATE WITHOUT_ICONV_FILTER)
 
-target_include_directories(parserutils PUBLIC 
+target_include_directories(parserutils PRIVATE 
 							src/
 							include/
 							include/parserutils)

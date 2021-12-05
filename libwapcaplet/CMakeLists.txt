@@ -6,4 +6,4 @@ set(WAPCAPLET_SRC src/libwapcaplet.c)
 
 add_library(wapcaplet STATIC ${WAPCAPLET_SRC})
 
-target_include_directories(wapcaplet PUBLIC include)
+target_include_directories(wapcaplet PRIVATE include)
