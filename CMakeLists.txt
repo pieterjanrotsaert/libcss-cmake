@@ -8,6 +8,8 @@ endif()
 
 file(GLOB_RECURSE CSS_SRC libcss/src/*.c)
 
+file(GLOB_RECURSE CSS_PUBLIC_HEADERS libcss/include/*.h)
+
 add_library(css STATIC ${CSS_SRC})
 
 target_include_directories(css PUBLIC libcss/include)
@@ -22,3 +24,13 @@ find_library(LIB_PARSERUTILS NAMES wapcaplet wapcapletd PATHS ${LIBCSS_LIB_DIR} 
 
 target_compile_definitions(css PUBLIC WITHOUT_ICONV_FILTER)
 target_link_libraries(css ${LIB_WAPCAPLET} ${LIB_PARSERUTILS})
+
+set_target_properties(css PROPERTIES PUBLIC_HEADER "${CSS_PUBLIC_HEADERS}")
+
+install(TARGETS css
+        EXPORT css-targets
+        LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+        ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+		PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+        FRAMEWORK DESTINATION Library/Frameworks
+        COMPONENT libraries)

@@ -12,3 +12,10 @@ target_include_directories(parserutils PRIVATE
 							src/
 							include/
 							include/parserutils)
+							
+install(TARGETS parserutils
+        EXPORT parserutils-targets
+        LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+        ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+        FRAMEWORK DESTINATION Library/Frameworks
+        COMPONENT libraries)
