@@ -4,7 +4,7 @@ LibCSS + Dependencies with CMake support
 ## For future reference
 
 What I did:
-Clone libparserutils, libwabcaplet & libparserutils.
+Clone libparserutils, libwabcaplet & libcss.
 Create cmake files for each of them (I simply used GLOB_RECURSE instead of listing every source file.)
 
 For libparserutils, run 'perl ./build/make-aliases.pl'
