@@ -19,8 +19,8 @@ target_include_directories(css PRIVATE
 	libwapcaplet/include
 	libcss/src/)
 
-find_library(LIB_WAPCAPLET NAMES wapcaplet wapcapletd PATHS ${LIBCSS_LIB_DIR} REQUIRED)
-find_library(LIB_PARSERUTILS NAMES wapcaplet wapcapletd PATHS ${LIBCSS_LIB_DIR} REQUIRED)
+find_library(LIB_WAPCAPLET NAMES wapcaplet PATHS ${LIBCSS_LIB_DIR} REQUIRED)
+find_library(LIB_PARSERUTILS NAMES parserutils PATHS ${LIBCSS_LIB_DIR} REQUIRED)
 
 target_compile_definitions(css PUBLIC WITHOUT_ICONV_FILTER)
 target_link_libraries(css ${LIB_WAPCAPLET} ${LIB_PARSERUTILS})
