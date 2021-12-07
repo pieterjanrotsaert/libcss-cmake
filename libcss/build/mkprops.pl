@@ -18,6 +18,14 @@ print <<EOF
 #ifndef css_parse_css21props_c_
 #define css_parse_css21props_c_
 
+#include <assert.h>
+#include <string.h>
+
+#include "bytecode/bytecode.h"
+#include "bytecode/opcodes.h"
+#include "parse/properties/properties.h"
+#include "parse/properties/utils.h"
+
 EOF
 ;
 
